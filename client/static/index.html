@@ -1,0 +1,29 @@
+<html ng-app="Redux_app">
+    <head>
+        <title>Full Mean Redux</title>
+    
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'/></script>
+
+        <script type="text/javascript" src="/js/Redux1955api.js"></script>
+    </head>
+    <!-- everything in the body is going to use the Redux controller (this gives us access to the Redux controller $scope) -->
+    <body ng-controller="ReduxController">
+        <h1>1955 Dashboard</h1>
+        <hr>
+
+        <h6><u>Add people who were born in 1955!</u></h6>
+    <!-- objects and properties nothing scary -->
+        <input type="text" ng-model="new_redux.name" placeholder="name">
+        <input type="submit" ng-click="addRedux()">
+        <hr>
+        <div>
+          <ul>
+    <!-- here is where we are going to display Redux -->
+            <li ng-repeat="person in people">
+              <span ng-bind="person.name"></span>
+              <span><a ng-click="removeRedux(person)"><button>Delete</button></a></span>
+            </li>
+          </ul>  
+        </div>
+    </body>
+</html>
